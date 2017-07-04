@@ -1,0 +1,21 @@
+GET /api/documents/patient/:patientId
+GET /api/documents/patient/:patientId/:referralId
+POST /api/patients/advancedSearch
+POST /api/patients/querySearch
+GET /api/patients/:patientId/documents/discharge/dischargeId?source=:source
+POST /api/patients/:patientId/documents/referral
+POST /api/patients/:patientId/documents/discharge
+GET /api/patients/:patientId/dicom/studies
+GET /api/patients/:patientId/dicom/studies/:studyId/series?source=:source
+GET /api/patients/:patientId/dicom/series/:seriesId?source=:source
+GET /api/patients/:patientId/dicom/series/:seriesId/instance?source=:source
+GET /api/patients/:patientid/dicom/instances/:instanceId?source=:source
+GET /api/patients/:patientId/clinicalStatements
+POST /api/patients/:patientId/clinicalStatements
+PUT /api/patients/:patientId/clinicalStatements
+GET /api/patients/:patientId/clinicalStatements/:sourceId
+GET /api/patients/:patientId/events/:eventType (toc = transfer of care)
+GET /api/patients/:patientId/events/:eventType/:sourceId',
+POST /api/patients/:patientId/events/:eventType',
+GET /api/contentStore/:storeId/tags (storeId = ts)
+GET /api/contentStore/:storeId/phrases?prefix=:prefix&tag=:tag (storeId = ts)

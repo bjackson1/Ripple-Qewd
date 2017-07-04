@@ -1,0 +1,33 @@
+{
+  "type": "array",
+  "items": {
+    "description": "All clinical statements for a specified patient",
+    "type": "object",
+    "properties" : {
+      "sourceId" : {
+        "description": "Date the study was recororded",
+        "type" : "string"
+      },
+
+      "type" : {
+        "description": "The type of clinical statement",
+        "type" : "string"
+      },
+
+      "dateCreated" : {
+        "description": "Date the statement was created",
+        "type" : "string"
+      },
+
+      "author" : {
+        "description": "Email address of the author",
+        "type" : "string"
+      },
+
+      "source" : {
+        "description": "Source system identifier",
+        "type" : "string"
+      }
+    }
+  }
+}

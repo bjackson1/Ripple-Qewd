@@ -18,24 +18,35 @@
     }
   },
   "paths": {
-    "/api/initialise":                  "=> get('initialise.json')",
+    "/api/initialise":                                       "=> get('initialise.json')",
     "/api/application" : {
-      "get" :                           "=> get('application-get.json')",
-      "post":                           "=> get('application-post.json', 'desc', 'Saves users application settings')",
-      "put":                            "=> get('application-post.json', 'desc', 'Updates users application settings')"
+      "get" :                                                "=> get('application-get.json')",
+      "post":                                                "=> get('application-post.json', 'desc', 'Saves users application settings')",
+      "put":                                                 "=> get('application-post.json', 'desc', 'Updates users application settings')"
     },
-    "/api/user":                        "=> get('user.json')",
-    "/api/patients":                    "=> get('patients.json')",
-    "/api/patients/{patientId}/counts": "=> get('patientCounts.json')"
-  },
+    "/api/user":                                             "=> get('user.json')",
+    "/api/patients":                                         "=> get('patients.json')",
+    "/api/patients/{patientId}/counts":                      "=> get('patientCounts.json')",
+    "/api/documents/patient/{patientId}":                    "=> get('documents.json')",
+    "/api/documents/patient/{patientId}/{documentId}":       "=> get('patientDocuments.json')",
+    "/api/patients/{patientId}/clinicalStatements":          "=> get('patientClinicalStatements.json')",
+    "/api/patients/{patientId}/events":                      "=> get('patientEvents.json')",
+    "/api/patients/{patientId}/events/{type}":               "=> get('patientEventsOfType.json')",
+    "/api/patients/{patientId}/dicom/studies":               "=> get('dicomStudies.json')"  
+},
   "definitions": {
-    "initialiseResponse":      "=> get('initialiseResponse.json')",
-    "applicationPayload":      "=> get('applicationPayload.json')",
-    "applicationSaveResponse": "=> get('applicationSaveResponse.json')",
-    "userResponse":            "=> get('userResponse.json')",
-    "userError":               "=> get('userError.json')",
-    "patientsResponse":        "=> get('patientsResponse.json')",
-    "countsResponse":          "=> get('countsResponse.json')",
-    "headingPostResponse":     "=> get('headingPostResponse.json')"
+    "initialiseResponse":                     "=> get('initialiseResponse.json')",
+    "applicationPayload":                     "=> get('applicationPayload.json')",
+    "applicationSaveResponse":                "=> get('applicationSaveResponse.json')",
+    "userResponse":                           "=> get('userResponse.json')",
+    "userError":                              "=> get('userError.json')",
+    "patientsResponse":                       "=> get('patientsResponse.json')",
+    "patientDocumentResponse":                "=> get('patientDocumentResponse.json')",
+    "dicomStudiesResponse":                   "=> get('dicomStudiesResponse.json')",
+    "patientClinicalStatementsResponse":      "=> get('patientClinicalStatementsResponse.json')",
+    "patientEventsResponse":                  "=> get('patientEventsResponse.json')",
+    "countsResponse":                         "=> get('countsResponse.json')",
+    "documentsResponse":                      "=> get('documentsResponse.json')",
+    "headingPostResponse":                    "=> get('headingPostResponse.json')"
   }
 }

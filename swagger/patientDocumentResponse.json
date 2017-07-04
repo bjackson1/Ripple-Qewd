@@ -1,0 +1,16 @@
+{
+  "items": {
+    "description": "Documents",
+    "type": "object",
+    "properties": {
+      "sourceId": {
+        "description": "Source ID for the document",
+        "type": "string"
+      },
+      "facility": {
+        "description": "Name of the facility to which the document relates",
+        "type": "string"
+      }
+    }
+  }
+}

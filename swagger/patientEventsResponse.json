@@ -1,0 +1,43 @@
+{
+  "type": "array",
+  "items": {
+    "description": "All clinical statements for a specified patient",
+    "type": "object",
+    "properties" : {
+      "sourceId" : {
+        "description": "Date the study was recororded",
+        "type" : "string"
+      },
+
+      "dateCreated" : {
+        "description": "Date the event was created",
+        "type" : "string"
+      },
+
+      "type" : {
+        "description": "The type of event",
+        "type" : "string"
+      },
+
+      "name" : {
+        "description": "Name of the event",
+        "type" : "string"
+      },
+
+      "description" : {
+        "description": "Description of the event",
+        "type" : "string"
+      },
+
+      "dateTime" : {
+        "description": "????",
+        "type" : "string"
+      },
+
+      "source" : {
+        "description": "Source system identifier",
+        "type" : "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "get" : {
+    "tags": ["Ripple"],
+    "description" : "Gets a single document by ID for a specified patient",
+    "security": "=> auth()",
+    "produces": "=> json()",
+    "parameters": [
+      {
+        "name": "patientId",
+        "in": "path",
+        "description": "Patient Id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "documentId",
+        "in": "path",
+        "description": "Document Id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": "=> get('response200.json', 'desc', 'Counts for selected headings', 'ref', 'patientDocumentResponse')",
+      "403": "=> get('response403.json')"
+    }
+  }
+}

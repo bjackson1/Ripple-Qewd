@@ -279,6 +279,272 @@
         }
       }
     },
+    "/api/documents/patient/{patientId}": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "description": "Gets all documents for specified patient",
+        "security": [
+          {
+            "QEWDToken": []
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "description": "Patient Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Counts for selected headings",
+            "headers": {
+              "X-ResponseTime": {
+                "description": "Back-end response time",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/documentsResponse"
+            }
+          },
+          "403": {
+            "description": "Missing or invalid authentication credentials"
+          }
+        }
+      }
+    },
+    "/api/documents/patient/{patientId}/{documentId}": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "description": "Gets a single document by ID for a specified patient",
+        "security": [
+          {
+            "QEWDToken": []
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "description": "Patient Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "documentId",
+            "in": "path",
+            "description": "Document Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Counts for selected headings",
+            "headers": {
+              "X-ResponseTime": {
+                "description": "Back-end response time",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/patientDocumentResponse"
+            }
+          },
+          "403": {
+            "description": "Missing or invalid authentication credentials"
+          }
+        }
+      }
+    },
+    "/api/patients/{patientId}/clinicalStatements": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "description": "Gets all clinical statements for a specified patient",
+        "security": [
+          {
+            "QEWDToken": []
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "description": "Patient Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Counts for selected headings",
+            "headers": {
+              "X-ResponseTime": {
+                "description": "Back-end response time",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/patientClinicalStatementsResponse"
+            }
+          },
+          "403": {
+            "description": "Missing or invalid authentication credentials"
+          }
+        }
+      }
+    },
+    "/api/patients/{patientId}/events": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "description": "Gets all events for a specified patient",
+        "security": [
+          {
+            "QEWDToken": []
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "description": "Patient Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Counts for selected headings",
+            "headers": {
+              "X-ResponseTime": {
+                "description": "Back-end response time",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/patientEventsResponse"
+            }
+          },
+          "403": {
+            "description": "Missing or invalid authentication credentials"
+          }
+        }
+      }
+    },
+    "/api/patients/{patientId}/events/{type}": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "description": "Gets all events of a specified type for a specified patient",
+        "security": [
+          {
+            "QEWDToken": []
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "description": "Patient Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "eventType",
+            "in": "path",
+            "description": "Type specifier for event, e.g. toc = Transfer of Care",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Counts for selected headings",
+            "headers": {
+              "X-ResponseTime": {
+                "description": "Back-end response time",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/patientEventsResponse"
+            }
+          },
+          "403": {
+            "description": "Missing or invalid authentication credentials"
+          }
+        }
+      }
+    },
+    "/api/patients/{patientId}/dicom/studies": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "description": "Gets all Digital Imaging for Communications in Medicine (DICOM) records for specified patient",
+        "security": [
+          {
+            "QEWDToken": []
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "description": "Patient Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All DICOM documents",
+            "headers": {
+              "X-ResponseTime": {
+                "description": "Back-end response time",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/dicomStudiesResponse"
+            }
+          },
+          "403": {
+            "description": "Missing or invalid authentication credentials"
+          }
+        }
+      }
+    },
     "/api/patients/{patientId}/allergies": {
       "get": {
         "tags": [
@@ -2434,6 +2700,113 @@
         }
       }
     },
+    "patientDocumentResponse": {
+      "items": {
+        "description": "Documents",
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "description": "Source ID for the document",
+            "type": "string"
+          },
+          "facility": {
+            "description": "Name of the facility to which the document relates",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dicomStudiesResponse": {
+      "type": "array",
+      "items": {
+        "description": "All Digital Imaging and Communications in Medicine (DICOM) studies for a specified patient",
+        "type": "object",
+        "properties": {
+          "dateRecorded": {
+            "description": "Date the study was recororded",
+            "type": "string"
+          },
+          "studyDescription": {
+            "description": "Description of the type of study conducted",
+            "type": "string"
+          },
+          "source": {
+            "description": "Reference to the originating system, e.g. orthanc",
+            "type": "string"
+          },
+          "studyId": {
+            "description": "Unique ID of the study",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "patientClinicalStatementsResponse": {
+      "type": "array",
+      "items": {
+        "description": "All clinical statements for a specified patient",
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "description": "Date the study was recororded",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of clinical statement",
+            "type": "string"
+          },
+          "dateCreated": {
+            "description": "Date the statement was created",
+            "type": "string"
+          },
+          "author": {
+            "description": "Email address of the author",
+            "type": "string"
+          },
+          "source": {
+            "description": "Source system identifier",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "patientEventsResponse": {
+      "type": "array",
+      "items": {
+        "description": "All clinical statements for a specified patient",
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "description": "Date the study was recororded",
+            "type": "string"
+          },
+          "dateCreated": {
+            "description": "Date the event was created",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of event",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the event",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the event",
+            "type": "string"
+          },
+          "dateTime": {
+            "description": "????",
+            "type": "string"
+          },
+          "source": {
+            "description": "Source system identifier",
+            "type": "string"
+          }
+        }
+      }
+    },
     "countsResponse": {
       "type": "array",
       "items": {
@@ -2478,6 +2851,34 @@
           },
           "sourceId": {
             "description": "Notional Source Identifier (for completeness)",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "documentsResponse": {
+      "type": "array",
+      "items": {
+        "description": "Documents",
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "description": "Source OpenEHR Composition Id",
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "author": {
+            "description": "Author of the document",
+            "type": "string"
+          },
+          "documentType": {
+            "description": "Type of document, for example Discharge Summary or Referral",
+            "type": "string"
+          },
+          "source": {
+            "description": "Source system",
             "type": "string"
           }
         }
@@ -3569,7 +3970,7 @@
         "author": {
           "type": "string"
         },
-        "dateCreate": {
+        "dateCreated": {
           "type": "string"
         },
         "newsScore": {

@@ -1,0 +1,28 @@
+{
+  "type": "array",
+  "items": {
+    "description": "Documents",
+    "type": "object",
+    "properties" : {
+      "sourceId" : {
+        "description": "Source OpenEHR Composition Id",
+        "type" : "string"
+      },
+      "dateCreated" : {
+        "type" : "string"
+      },
+      "author" : {
+        "description": "Author of the document",
+        "type" : "string"
+      },
+      "documentType" : {
+        "description": "Type of document, for example Discharge Summary or Referral",
+        "type" : "string"
+      },
+      "source" : {
+        "description": "Source system",
+        "type" : "string"
+      }
+    }
+  }
+}
